@@ -1,15 +1,8 @@
 package com.sf_ecommerce.fncom.dto.request.create;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.sf_ecommerce.fncom.constant.ErrorConstantMessage;
-import com.sf_ecommerce.fncom.constraint.OnlyInteger;
-import com.sf_ecommerce.fncom.constraint.Phone;
-import com.sf_ecommerce.fncom.entities.CustomerEntity;
-import org.hibernate.annotations.NotFound;
-import org.hibernate.annotations.NotFoundAction;
 import org.springframework.validation.annotation.Validated;
 
-import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
