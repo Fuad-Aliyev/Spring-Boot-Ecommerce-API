@@ -1,14 +1,20 @@
 package com.sf_ecommerce.fncom.exceptions;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.PropertyAccessor;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sf_ecommerce.fncom.constant.OtherConstant;
-import com.sf_ecommerce.fncom.dto.BaseResponseDTO;
+import com.sf_ecommerce.fncom.dto.response.errors.BaseResponseDTO;
 import com.sf_ecommerce.fncom.enums.ErrorEnum;
 import com.sf_ecommerce.fncom.processIO.generator.ResponseGenerator;
 import org.hibernate.exception.GenericJDBCException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.converter.HttpMessageNotReadableException;
+import org.springframework.security.web.header.Header;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;

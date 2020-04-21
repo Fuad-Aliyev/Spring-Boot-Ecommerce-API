@@ -1,10 +1,10 @@
 package com.sf_ecommerce.fncom.services;
 
-import com.sf_ecommerce.fncom.dto.request.create.CustomerDTO;
+import com.sf_ecommerce.fncom.dto.request.create.customers.CustomerDTO;
 import com.sf_ecommerce.fncom.dto.request.update.CustomerUpdateDTO;
-import com.sf_ecommerce.fncom.entities.AddressEntity;
-import com.sf_ecommerce.fncom.entities.CustomerEntity;
-import com.sf_ecommerce.fncom.entities.MetafieldEntity;
+import com.sf_ecommerce.fncom.entities.customers.AddressEntity;
+import com.sf_ecommerce.fncom.entities.customers.CustomerEntity;
+import com.sf_ecommerce.fncom.entities.customers.MetafieldEntity;
 import com.sf_ecommerce.fncom.enums.ErrorEnum;
 import com.sf_ecommerce.fncom.exceptions.RestException;
 import com.sf_ecommerce.fncom.repository.CustomerRepository;
@@ -85,6 +85,7 @@ public class CustomerService {
     public Long getCountOfCustomers() {
         return customerRepository.count();
     }
+
 
     private CustomerEntity updateMapper(CustomerUpdateDTO customerUpdateDTO, CustomerEntity customerEntity) {
         List<AddressEntity> addressEntityList = getAddressUpdateList(customerUpdateDTO);

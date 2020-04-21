@@ -1,7 +1,7 @@
 package com.sf_ecommerce.fncom.processIO.generator;
 
-import com.sf_ecommerce.fncom.dto.BaseResponseDTO;
-import com.sf_ecommerce.fncom.dto.ErrorMessageDTO;
+import com.sf_ecommerce.fncom.dto.response.errors.BaseResponseDTO;
+import com.sf_ecommerce.fncom.dto.response.errors.ErrorMessageDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

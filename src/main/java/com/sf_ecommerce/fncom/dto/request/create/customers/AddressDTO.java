@@ -1,6 +1,7 @@
-package com.sf_ecommerce.fncom.dto.request.create;
+package com.sf_ecommerce.fncom.dto.request.create.customers;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.sf_ecommerce.fncom.constraint.Phone;
 import org.springframework.validation.annotation.Validated;
 
 import javax.validation.constraints.NotBlank;
@@ -40,7 +41,8 @@ public class AddressDTO implements Serializable {
     @NotBlank(message = "")
     private String zipCode;
 
-    @NotBlank(message = "")
+    @Phone
+    @NotNull(message = "phone can not be null")
     private String phone;
 
     @NotNull(message = "")

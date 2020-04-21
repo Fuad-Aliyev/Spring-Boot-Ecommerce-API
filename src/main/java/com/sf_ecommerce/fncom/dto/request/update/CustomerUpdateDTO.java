@@ -2,8 +2,6 @@ package com.sf_ecommerce.fncom.dto.request.update;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.sf_ecommerce.fncom.constraint.Email;
-import com.sf_ecommerce.fncom.dto.request.create.MetafieldDTO;
-import com.sf_ecommerce.fncom.dto.response.AddressResponseDTO;
 import com.sf_ecommerce.fncom.enums.TaxExemptionEnum;
 import org.springframework.validation.annotation.Validated;
 

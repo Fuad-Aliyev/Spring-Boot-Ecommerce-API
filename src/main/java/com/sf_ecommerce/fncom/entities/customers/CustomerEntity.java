@@ -1,4 +1,4 @@
-package com.sf_ecommerce.fncom.entities;
+package com.sf_ecommerce.fncom.entities.customers;
 
 import com.sf_ecommerce.fncom.enums.TaxExemptionEnum;
 import org.hibernate.annotations.DynamicInsert;
@@ -10,10 +10,8 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.math.BigInteger;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.Objects;
 
 @Entity
 @Table(name = "CUSTOMERS")

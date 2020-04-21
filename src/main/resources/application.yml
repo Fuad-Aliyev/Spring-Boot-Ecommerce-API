@@ -1,12 +1,22 @@
+#database
 datasource:
   mysql:
     user: root
-    password: 
+    password: HackRobo989
     host: jdbc:mysql://localhost:3306/ecommerce?useSSL=false&allowPublicKeyRetrieval=true
     driver: com.mysql.cj.jdbc.Driver
     jpa:
       hibernate:
         dialect: org.hibernate.dialect.MySQL57InnoDBDialect
-
+#server
 server:
-  port: 9090
+    port: 9090
+#security
+jwt:
+  header: Authorization
+  secret: mySecret
+  expiration: 604800
+  route:
+    authentication:
+      path: /auth
+      refresh: /refresh

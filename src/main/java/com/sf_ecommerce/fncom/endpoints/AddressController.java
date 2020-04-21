@@ -1,11 +1,11 @@
 package com.sf_ecommerce.fncom.endpoints;
 
-import com.sf_ecommerce.fncom.dto.BaseResponseDTO;
-import com.sf_ecommerce.fncom.dto.request.create.AddressDTO;
+import com.sf_ecommerce.fncom.dto.response.errors.BaseResponseDTO;
+import com.sf_ecommerce.fncom.dto.request.create.customers.AddressDTO;
 import com.sf_ecommerce.fncom.dto.request.update.AddressUpdateDTO;
 import com.sf_ecommerce.fncom.dto.response.AddressResponseDTO;
-import com.sf_ecommerce.fncom.entities.AddressEntity;
-import com.sf_ecommerce.fncom.entities.CustomerEntity;
+import com.sf_ecommerce.fncom.entities.customers.AddressEntity;
+import com.sf_ecommerce.fncom.entities.customers.CustomerEntity;
 import com.sf_ecommerce.fncom.factory.GeneralFactory;
 import com.sf_ecommerce.fncom.services.AddressService;
 import com.sf_ecommerce.fncom.services.CustomerService;
@@ -40,7 +40,7 @@ public class AddressController {
     @Autowired
     private ModelMapper modelMapper;
 
-    @ApiOperation(value = "Retrieves addresses of spesific customer", tags = "Address Controller")
+    @ApiOperation(value = "Retrieves addresses of spesific customers", tags = "Address Controller")
     @GetMapping("/customers/{id}/addresses")
     public BaseResponseDTO<AddressResponseDTO> getBulkAddresses(@PathVariable("id") Long id) {
         BaseResponseDTO<AddressResponseDTO> baseResponseDTO = GeneralFactory.createObject(BaseResponseDTO.class);
@@ -50,7 +50,7 @@ public class AddressController {
         return baseResponseDTO;
     }
 
-    @ApiOperation(value = "Retrieves spesific address of spesific customer", tags = "Address Controller")
+    @ApiOperation(value = "Retrieves spesific address of spesific customers", tags = "Address Controller")
     @GetMapping("/customers/{customerId}/addresses/{addressId}")
     public BaseResponseDTO<AddressResponseDTO> getAddress(@PathVariable("customerId") Long customerId,
                                                                             @PathVariable("addressId") Long addressId) {
@@ -62,7 +62,7 @@ public class AddressController {
         return baseResponseDTO;
     }
 
-    @ApiOperation(value = "Delete spesific address of spesific customer", tags = "Address Controller")
+    @ApiOperation(value = "Delete spesific address of spesific customers", tags = "Address Controller")
     @DeleteMapping("/customers/{customerId}/addresses/{addressId}")
     public BaseResponseDTO<AddressResponseDTO> deleteAddress(@PathVariable("customerId") Long customerId,
                                                              @PathVariable("addressId") Long addressId) {
@@ -72,7 +72,7 @@ public class AddressController {
         return baseResponseDTO;
     }
 
-    @ApiOperation(value = "Creates address for spesific customer", tags = "Address Controller")
+    @ApiOperation(value = "Creates address for spesific customers", tags = "Address Controller")
     @PostMapping("/customers/{customerId}/addresses")
     public BaseResponseDTO<AddressResponseDTO> createAddress(@RequestBody @Valid AddressDTO addressDTO,
                                                              @PathVariable("customerId") Long customerId) {
@@ -83,7 +83,7 @@ public class AddressController {
         return baseResponseDTO;
     }
 
-    @ApiOperation(value = "Updates address for spesific customer address", tags = "Address Controller")
+    @ApiOperation(value = "Updates address for spesific customers address", tags = "Address Controller")
     @PutMapping("/customers/{customerId}/addresses/{addressId}")
     public BaseResponseDTO<AddressResponseDTO> updateAddress(@RequestBody @Valid AddressUpdateDTO addressDTO,
                                                              @PathVariable("customerId") Long customerId,
@@ -95,7 +95,7 @@ public class AddressController {
         return baseResponseDTO;
     }
 
-    @ApiOperation(value = "Sets address default for spesific customer", tags = "Address Controller")
+    @ApiOperation(value = "Sets address default for spesific customers", tags = "Address Controller")
     @PutMapping("/customers/{customerId}/addresses/{addressId}/default")
     public BaseResponseDTO<AddressResponseDTO> makeAddressDefault(@PathVariable("customerId") Long customerId,
                                                                   @PathVariable("addressId") Long addressId) {

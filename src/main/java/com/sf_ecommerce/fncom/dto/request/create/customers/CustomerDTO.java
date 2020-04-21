@@ -1,54 +1,54 @@
-package com.sf_ecommerce.fncom.dto.request.create;
+package com.sf_ecommerce.fncom.dto.request.create.customers;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.sf_ecommerce.fncom.constant.ErrorConstantMessage;
-import com.sf_ecommerce.fncom.constant.RegexConstant;
 import com.sf_ecommerce.fncom.constraint.Email;
-import com.sf_ecommerce.fncom.constraint.OnlyInteger;
-import com.sf_ecommerce.fncom.constraint.Phone;
 import com.sf_ecommerce.fncom.enums.TaxExemptionEnum;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import org.springframework.validation.annotation.Validated;
 
-import javax.persistence.*;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.math.BigInteger;
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-import java.util.Objects;
 
 @Validated
 @JsonInclude(JsonInclude.Include.NON_NULL)
+@ApiModel(description = "All details about customer")
 public class CustomerDTO implements Serializable {
 
     private static final long serialVersionUID = -5214416748031082083L;
 
+    @ApiModelProperty(notes = "it is boolean that accepts marketing")
     @NotBlank(message = "acceptsMarketing can not be empty")
     private String acceptsMarketing;
 
     @Size(min = 1, max = 2, message = "addresses list can have min 1 max 2 addresses")
     @Valid
+    @ApiModelProperty(notes = "It is address list of customer")
     private List<AddressDTO> addresses;
 
     @NotBlank(message = "currency can not be empty")
+    @ApiModelProperty(notes = "it is currency that customer will pay")
     private String currency;
 
     @NotBlank(message = "email can not be empty")
     @Email
+    @ApiModelProperty(notes = "It is email address of customer")
     private String email;
 
     @NotBlank(message = "firstname can not be empty")
+    @ApiModelProperty(notes = "It is firstname of customer")
     private String firstName;
 
     @NotBlank(message = "lastname can not be empty")
+    @ApiModelProperty(notes = "It is lastname of customer")
     private String lastName;
 
     @NotBlank(message = "lastOrderName can not be empty")
+    @ApiModelProperty(notes = "It is name of the order that customer sent")
     private String lastOrderName;
 
     @Valid

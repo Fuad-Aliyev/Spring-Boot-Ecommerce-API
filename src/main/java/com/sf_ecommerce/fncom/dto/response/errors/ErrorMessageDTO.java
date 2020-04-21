@@ -1,4 +1,4 @@
-package com.sf_ecommerce.fncom.dto;
+package com.sf_ecommerce.fncom.dto.response.errors;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

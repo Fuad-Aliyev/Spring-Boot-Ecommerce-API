@@ -1,4 +1,4 @@
-package com.sf_ecommerce.fncom.dto.request.create;
+package com.sf_ecommerce.fncom.dto.request.create.customers;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;

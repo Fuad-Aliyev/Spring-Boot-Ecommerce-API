@@ -1,9 +1,9 @@
 package com.sf_ecommerce.fncom.services;
 
-import com.sf_ecommerce.fncom.dto.request.create.AddressDTO;
+import com.sf_ecommerce.fncom.dto.request.create.customers.AddressDTO;
 import com.sf_ecommerce.fncom.dto.request.update.AddressUpdateDTO;
-import com.sf_ecommerce.fncom.entities.AddressEntity;
-import com.sf_ecommerce.fncom.entities.CustomerEntity;
+import com.sf_ecommerce.fncom.entities.customers.AddressEntity;
+import com.sf_ecommerce.fncom.entities.customers.CustomerEntity;
 import com.sf_ecommerce.fncom.enums.ErrorEnum;
 import com.sf_ecommerce.fncom.exceptions.RestException;
 import com.sf_ecommerce.fncom.repository.AddressRepository;
@@ -11,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service

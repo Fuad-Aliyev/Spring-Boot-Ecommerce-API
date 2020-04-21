@@ -1,7 +1,7 @@
 package com.sf_ecommerce.fncom.exceptions;
 
 import com.sf_ecommerce.fncom.constant.OtherConstant;
-import com.sf_ecommerce.fncom.dto.ErrorMessageDTO;
+import com.sf_ecommerce.fncom.dto.response.errors.ErrorMessageDTO;
 import com.sf_ecommerce.fncom.enums.ErrorEnum;
 
 public class RestException extends RuntimeException {

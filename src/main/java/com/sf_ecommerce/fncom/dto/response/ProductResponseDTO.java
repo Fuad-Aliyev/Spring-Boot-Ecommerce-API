@@ -1,34 +1,24 @@
-package com.sf_ecommerce.fncom.dto.request.create.products;
+package com.sf_ecommerce.fncom.dto.response;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.sf_ecommerce.fncom.entities.products.CollectEntity;
-import com.sf_ecommerce.fncom.entities.products.ImageEntity;
-import com.sf_ecommerce.fncom.entities.products.VariantEntity;
-import org.hibernate.annotations.NotFound;
-import org.hibernate.annotations.NotFoundAction;
-import org.springframework.validation.annotation.Validated;
+import com.sf_ecommerce.fncom.dto.request.create.products.CollectDTO;
+import com.sf_ecommerce.fncom.dto.request.create.products.ImageDTO;
+import com.sf_ecommerce.fncom.dto.request.create.products.OptionsDTO;
+import com.sf_ecommerce.fncom.dto.request.create.products.VariantDTO;
 
-import javax.persistence.*;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 import java.io.Serializable;
-import java.sql.Blob;
-import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 import java.util.Set;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@Validated
-public class ProductCreateDTO implements Serializable {
+public class ProductResponseDTO implements Serializable {
 
-    private static final long serialVersionUID = -4880709877939426339L;
+    private static final long serialVersionUID = -2815344150359540692L;
 
-    @NotBlank(message = "bodyHtml can not be empty")
-    @JsonProperty("body_html")
     private String bodyHtml;
 
     private String handle;
@@ -37,26 +27,20 @@ public class ProductCreateDTO implements Serializable {
 
     private List<OptionsDTO> options;
 
-    @NotBlank(message = "productType can not be empty")
-    @JsonProperty("product_type")
     private String productType;
 
     private String publishedScope;
 
-    @NotNull(message = "tags can not be empty")
     private List<String> tags;
 
     private String templateSuffix;
 
-    @NotBlank(message = "title can not be empty")
     private String title;
 
     private Set<VariantDTO> variants;
 
-    @NotBlank(message = "vendor can not be empty")
     private String vendor;
 
-    @Valid
     private CollectDTO collect;
 
     public String getBodyHtml() {
@@ -172,4 +156,5 @@ public class ProductCreateDTO implements Serializable {
                 ", collect=" + collect +
                 '}';
     }
+
 }
