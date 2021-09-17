@@ -1,0 +1,55 @@
+//jooq {
+//    version = '3.13.0'
+//    edition = 'OSS'
+//    generateSchemaSourceOnCompilation = true
+//    main(sourceSets.main) {
+//        jdbc {
+//            driver = 'org.postgresql.Driver'
+//            url = dbUrl
+//        }
+//
+//        generator {
+//            name = 'org.jooq.codegen.DefaultGenerator'
+//            strategy {
+//                name = 'org.jooq.codegen.DefaultGeneratorStrategy'
+//            }
+//            database {
+//                name = 'org.jooq.meta.postgres.PostgresDatabase'
+//                schemata {
+//                    schema {
+//                        inputSchema = dbDefaultSchema
+//                    }
+//                }
+//
+//                forcedTypes {
+//                    forcedType {
+//                        name = 'varchar'
+//                        expression = '.*'
+//                        types = 'JSONB?'
+//                    }
+//                    forcedType {
+//                        name = 'varchar'
+//                        expression = '.*'
+//                        types = 'INET'
+//                    }
+//                }
+//                includes = '^(t_).*'
+//            }
+//            generate {
+//                relations = true
+//                deprecated = false
+//                records = true
+//                immutablePojos = true
+//                fluentSetters = true
+//                javaTimeTypes = true
+//            }
+//            target {
+//                packageName = 'mt.bettech.bs.engine'
+//            }
+//        }
+//    }
+//}
+//
+//dependencies {
+//    jooqRuntime "org.postgresql:postgresql"
+//}
